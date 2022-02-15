@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -30,6 +31,63 @@ namespace CW_6_Andrew_Newbill
 
         private void GetDataButton_Click(object sender, RoutedEventArgs e)
         {
+            //Getting Asset IDs
+            string query = "select AssetID from Assets";
+
+            OleDbCommand cmd = new OleDbCommand(query, cn);
+
+            cn.Open();
+
+            OleDbDataReader read = cmd.ExecuteReader();
+
+            string data = "";
+
+            while (read.Read())
+            {
+                data += read[0].ToString() + "\n";
+            }
+
+            AssetIDS.Text = data;
+
+            //Getting Asset descriptions
+
+            query = "select Description from Assets";
+
+            cmd = new OleDbCommand(query, cn);
+
+            read = cmd.ExecuteReader();
+
+            data = "";
+
+            while (read.Read())
+            {
+                data += read[0].ToString() + "\n";
+            }
+
+            AssetDescriptions.Text = data;
+
+            query = "select EmployeeID from Assets";
+
+            cmd = new OleDbCommand(query, cn);
+
+            read = cmd.ExecuteReader();
+
+            data = "";
+
+            while (read.Read())
+            {
+                data += read[0].ToString() + "\n";
+            }
+
+            AssignedToBox.Text = data;
+
+
+        }
+
+        private void Get_Employees_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Tuple<string, string>[] names;
+
 
         }
     }

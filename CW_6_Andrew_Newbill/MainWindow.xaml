@@ -7,8 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock x:Name="DataInfo" HorizontalAlignment="Left" Margin="71,106,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="58" Width="82"/>
-        <Button x:Name="GetDataButton" Content="See Assets" HorizontalAlignment="Left" Margin="54,355,0,0" VerticalAlignment="Top" Width="75" Click="GetDataButton_Click"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FFDCCACA" Offset="0.665"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBlock x:Name="AssetIDS" HorizontalAlignment="Left" Margin="54,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="145" Width="58" Foreground="#FF615D5D" Background="#FFE6E1E1"/>
+        <Button x:Name="GetDataButton" Content="See Assets" HorizontalAlignment="Left" Margin="144,336,0,0" VerticalAlignment="Top" Width="75" Click="GetDataButton_Click" RenderTransformOrigin="0.096,-0.903"/>
+        <Label Content="AssetID" HorizontalAlignment="Left" Margin="54,85,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label Content="Description&#xD;&#xA;" HorizontalAlignment="Left" Margin="117,85,0,0" VerticalAlignment="Top" Width="139" Height="26"/>
+        <TextBlock x:Name="AssetDescriptions" HorizontalAlignment="Left" Margin="117,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="145" Width="139" Background="#FFE6E1E1"/>
+        <Label x:Name="AssignedLabel" Content="Assigned To" HorizontalAlignment="Left" Margin="261,85,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="AssignedToBox" HorizontalAlignment="Left" Margin="261,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="145" Width="73" Background="#FFE6E1E1"/>
+        <Label x:Name="Employee_ID_Label" Content="Employee ID" HorizontalAlignment="Left" Margin="387,85,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Employee_Names" Content="Employee Names" HorizontalAlignment="Left" Margin="469,85,0,0" VerticalAlignment="Top" Width="109"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Employee_IDs_2" HorizontalAlignment="Left" Margin="387,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="145" Width="77" Background="#FFE6E1E1"/>
+        <TextBlock x:Name="Employee_Names_Text" HorizontalAlignment="Left" Margin="469,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="145" Width="109" Background="#FFE6E1E1"/>
+        <Button x:Name="Get_Employees_Button" Content="See Employees" HorizontalAlignment="Left" Margin="448,336,0,0" VerticalAlignment="Top" Width="84" Click="Get_Employees_Button_Click"/>
 
     </Grid>
 </Window>
