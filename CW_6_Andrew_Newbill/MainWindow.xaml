@@ -21,11 +21,13 @@
         <Label x:Name="AssignedLabel" Content="Assigned To" HorizontalAlignment="Left" Margin="261,85,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="AssignedToBox" HorizontalAlignment="Left" Margin="261,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="145" Width="73" Background="#FFE6E1E1"/>
         <Label x:Name="Employee_ID_Label" Content="Employee ID" HorizontalAlignment="Left" Margin="387,85,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Employee_Names" Content="Employee Names" HorizontalAlignment="Left" Margin="469,85,0,0" VerticalAlignment="Top" Width="109"/>
+        <Label x:Name="Employee_Names_First_Label" Content="Employee First Names" HorizontalAlignment="Left" Margin="469,85,0,0" VerticalAlignment="Top" Width="129"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="Employee_IDs_2" HorizontalAlignment="Left" Margin="387,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="145" Width="77" Background="#FFE6E1E1"/>
-        <TextBlock x:Name="Employee_Names_Text" HorizontalAlignment="Left" Margin="469,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="145" Width="109" Background="#FFE6E1E1"/>
+        <TextBlock x:Name="Employee_Names_First" HorizontalAlignment="Left" Margin="469,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="145" Width="129" Background="#FFE6E1E1"/>
         <Button x:Name="Get_Employees_Button" Content="See Employees" HorizontalAlignment="Left" Margin="448,336,0,0" VerticalAlignment="Top" Width="84" Click="Get_Employees_Button_Click"/>
+        <TextBlock x:Name="Employee_Names_Last" HorizontalAlignment="Left" Margin="603,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="145" Width="129" Background="#FFE6E1E1"/>
+        <Label x:Name="Employee_Names_Last_Label" Content="Employee Last Names" HorizontalAlignment="Left" Margin="603,85,0,0" VerticalAlignment="Top" Width="129"/>
 
     </Grid>
 </Window>

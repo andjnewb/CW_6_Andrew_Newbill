@@ -23,10 +23,13 @@ namespace CW_6_Andrew_Newbill
     public partial class MainWindow : Window
     {
         OleDbConnection cn;
+        OleDbConnection cn2;
         public MainWindow()
         {
             InitializeComponent();
             cn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\CW6_Database.accdb");
+            cn2 = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\CW6_Database.accdb");
+
         }
 
         private void GetDataButton_Click(object sender, RoutedEventArgs e)
@@ -81,14 +84,61 @@ namespace CW_6_Andrew_Newbill
 
             AssignedToBox.Text = data;
 
+            cn.Close();
 
         }
 
         private void Get_Employees_Button_Click(object sender, RoutedEventArgs e)
         {
-            Tuple<string, string>[] names;
+            //Getting Asset IDs
+            string query = "select Employee_ID from Employees";
 
+            OleDbCommand cmd = new OleDbCommand(query, cn);
 
+            cn.Open();
+
+            OleDbDataReader read = cmd.ExecuteReader();
+
+            string data = "";
+
+            while (read.Read())
+            {
+                data += read[0].ToString() + "\n";
+            }
+
+            Employee_IDs_2.Text = data;
+
+            query = "select FirstName from Employees";
+
+            cmd = new OleDbCommand(query, cn);
+
+            read = cmd.ExecuteReader();
+
+            data = "";
+
+            while (read.Read())
+            {
+                data += read[0].ToString() + "\n";
+            }
+
+            Employee_Names_First.Text = data;
+
+            query = "select LastName from Employees";
+
+            cmd = new OleDbCommand(query, cn);
+
+            read = cmd.ExecuteReader();
+
+            data = "";
+
+            while (read.Read())
+            {
+                data += read[0].ToString() + "\n";
+            }
+
+            Employee_Names_Last.Text = data;
+
+            cn2.Close();
         }
     }
 }
